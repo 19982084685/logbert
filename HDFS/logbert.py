@@ -37,7 +37,7 @@ options["test_ratio"] = 1
 options["is_logkey"] = True
 options["is_time"] = False
 
-options["hypersphere_loss"] = True
+options["hypersphere_loss"] = False
 options["hypersphere_loss_test"] = False
 
 options["scale"] = None # MinMaxScaler()

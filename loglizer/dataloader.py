@@ -283,19 +283,19 @@ def load_data(data_dir, middle_dir="", log_file="", is_mapping=False):
     with open(data_dir + middle_dir + "train", "r") as f:
         for line in f:
             train.append([ln.split(",")[0] for ln in line.split()])
-    train = np.array(train).reshape(-1,1)
+    train = np.array(train, dtype=object).reshape(-1,1)
 
     test_normal = []
     with open(data_dir + middle_dir + "test_normal", "r") as f:
         for line in f:
             test_normal.append([ln.split(",")[0] for ln in line.split()])
-    test_normal = np.array(test_normal).reshape(-1,1)
+    test_normal = np.array(test_normal, dtype=object).reshape(-1,1)
 
     abnormal = []
     with open(data_dir + middle_dir + "test_abnormal", "r") as f:
         for line in f:
             abnormal.append([ln.split(",")[0] for ln in line.split()])
-    abnormal = np.array(abnormal).reshape(-1,1)
+    abnormal = np.array(abnormal, dtype=object).reshape(-1,1)
 
     train_abnormal_size = min(int(len(train)/2), int(len(abnormal) * 0.4))
 
